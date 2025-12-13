@@ -9,22 +9,25 @@ import { Router } from '@angular/router';
   styleUrl: './login-page.scss',
 })
 export class LoginPage {
-  router=inject(Router);
-  message:string='';
-  loginForm:LoginForm={
-    username:'',
-    password:'',
-    keepMe:false,
+  router = inject(Router);
+  message: string = '';
+  loginForm: LoginForm = {
+    username: '',
+    password: '',
+    keepMe: false,
   }
-  check(){
-    this.message='نام کاربری یا کلمه عبور صحیح نیست';
+  check() {
+    if (this.loginForm.username == 'admin' && this.loginForm.password == 'admin') {
+      this.router.navigateByUrl('private');
+    }
+    else {
+      this.message = 'نام کاربری یا کلمه عبور صحیح نیست';
 
+    }
   }
 }
-
-
 interface LoginForm {
-  username:string;
-  password:string;
-  keepMe:boolean;
+  username: string;
+  password: string;
+  keepMe: boolean;
 }

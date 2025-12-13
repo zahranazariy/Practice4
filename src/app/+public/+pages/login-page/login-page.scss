@@ -1,0 +1,50 @@
+.login {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 140, 0, .2);
+    width: 280px;
+    text-align: center;
+}
+
+h2 {
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: .7rem;
+    margin: .5rem 0;
+    border-radius: 6px;
+    border: 1px solid #dcbc9d;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    font-size: .9rem;
+    color: #555;
+    margin: .5rem 0 1rem;
+}
+
+.remember input {
+    accent-color: #b69785;
+    margin-left: .5rem;
+}
+
+button {
+    background: #ff8c42;
+    color: #fff;
+    border: none;
+    padding: .7rem;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e67e30;
+}
+

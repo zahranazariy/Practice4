@@ -1,15 +1,17 @@
 <div class="login">
+    <h2>ورود به حساب کاربری</h2>
     <form (ngSubmit)="check()">
         <div>
             <label for="username">نام کاربری</label>
-            <input id="username" name="username" type="text" placeholder="نام کاربری">
+            <input [(ngModel)]="loginForm.username" id="username" name="username" type="text" placeholder="نام کاربری">
         </div>
         <div>
             <label for="password">رمز عبور</label>
-            <input id="password" name="password" type="password" placeholder="رمز عبور">
+            <input [(ngModel)]="loginForm.password" id="password" name="password" type="password"
+                placeholder="رمز عبور">
         </div>
-        <div>
-            <input id="keepMe" name="keepMe" type="checkbox">
+        <div class="remember">
+            <input [(ngModel)]="loginForm.keepMe" id="keepMe" name="keepMe" type="checkbox">
             <label for="keepMe">من را به خاطر بسپار</label>
         </div>
         <div>
