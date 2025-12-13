@@ -47,4 +47,10 @@ button {
 button:hover {
     background: #e67e30;
 }
+.body {
+  font-family: sans-serif;
+  background: #d5d5d5a8;
+  display: flex; justify-content: center; align-items: center;
+  height: 100vh;
+}
 

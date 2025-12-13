@@ -18,6 +18,10 @@ export class LoginPage {
   }
   check() {
     if (this.loginForm.username == 'admin' && this.loginForm.password == 'admin') {
+      sessionStorage.setItem('auth-token', 'vugvvuvuvtFTYCYRXRUufiidkwfjoj');
+      if (this.loginForm.keepMe == true) {
+        localStorage.setItem('auth-token', 'vugvvuvuvtFTYCYRXRUufiidkwfjoj');
+      }
       this.router.navigateByUrl('private');
     }
     else {
