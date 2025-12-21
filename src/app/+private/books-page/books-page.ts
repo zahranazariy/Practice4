@@ -10,7 +10,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class BooksPage implements OnInit {
   save() {
-    this.booksService.add(this.item);
+    if (this.state == 'add') {
+      this.booksService.add(this.item);
+    }
+    else if (this.state == 'edit') {
+      this.booksService.edit(this.item);
+    }
     this.dataRefresh();
     this.state = 'list'
   }
@@ -19,10 +24,8 @@ export class BooksPage implements OnInit {
   }
   data: BookItem[] = [];
   item: BookItem = {
-    id: 0,
     title: '',
     writer: '',
-    price: 0,
     publisher: '',
   };
   booksService = inject(BooksService);
@@ -37,6 +40,10 @@ export class BooksPage implements OnInit {
       writer: '',
       publisher: '',
     };
+  }
+  edit(book: BookItem) {
+    this.item = { ...book };
+    this.state = 'edit';
   }
   cancel() {
     this.state = 'list';
