@@ -16,6 +16,10 @@ export class BooksPage implements OnInit {
     else if (this.state == 'edit') {
       this.booksService.edit(this.item);
     }
+    else if (this.state == 'remove') {
+      this.booksService.remove(this.item);
+    }
+
     this.dataRefresh();
     this.state = 'list'
   }
@@ -44,6 +48,10 @@ export class BooksPage implements OnInit {
   edit(book: BookItem) {
     this.item = { ...book };
     this.state = 'edit';
+  }
+  remove(book: BookItem) {
+    this.item = { ...book };
+    this.state = 'remove';
   }
   cancel() {
     this.state = 'list';

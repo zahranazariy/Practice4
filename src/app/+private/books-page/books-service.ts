@@ -23,7 +23,9 @@ export class BooksService {
       this.data[index].writer = item.writer;
       this.data[index].publisher = item.publisher;
       this.data[index].price = item.price;
-
     }
+  }
+  remove(item: BookItem) {
+  this.data=this.data.filter(b=>b.id!==item.id);
   }
 }
