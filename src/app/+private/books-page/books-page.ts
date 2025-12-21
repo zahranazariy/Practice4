@@ -12,7 +12,7 @@ export class BooksPage implements OnInit {
   save() {
     this.booksService.add(this.item);
     this.dataRefresh();
-    this.state='list'
+    this.state = 'list'
   }
   ngOnInit(): void {
     this.dataRefresh();
@@ -32,13 +32,18 @@ export class BooksPage implements OnInit {
   }
   add() {
     this.state = 'add';
+    this.item = {
+      title: '',
+      writer: '',
+      publisher: '',
+    };
   }
   cancel() {
     this.state = 'list';
   }
 }
 export interface BookItem {
-  id: number;
+  id?: number;
   title: string;
   writer: string;
   publisher: string;
