@@ -16,4 +16,16 @@ export class MembersService {
   add(item:MemberItem){
     this.data.push(item);
   }
-}
+    edit(item: MemberItem) {
+      const index = this.data.findIndex(m => m.id == item.id);
+      if (index != -1) {
+        this.data[index].name = item.name;
+        this.data[index].telephone = item.telephone;
+      }
+    }
+    remove(item: MemberItem) {
+    this.data=this.data.filter(m=>m.id!==item.id);
+    }
+  }
+  
+

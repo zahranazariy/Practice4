@@ -1,3 +1,4 @@
+@if (state=='list') {
 <button (click)="add()" class="primary">افزودن</button>
 <table>
     <thead>
@@ -15,11 +16,39 @@
             <td>{{item.name}} </td>
             <td>{{item.telephone}}</td>
             <td>
-                <button class="primary">ویرایش</button>
-                <button class="primary">حذف</button>
+                <button (click)="edit(item)" class="primary">ویرایش</button>
+                <button (click)="remove(item)" class="primary">حذف</button>
             </td>
         </tr>
 
         }
     </tbody>
 </table>
+}
+@else {
+@if (state=='remove') {
+<div class="alert">
+    از حذف این مشترک اطمینان دارید؟
+</div>
+}
+
+<form (ngSubmit)="save()">
+    @if (state!='edit') {
+    <div>
+        <input [disabled]="state=='remove'" [(ngModel)]="item.id" id="id" name="id" type="number" placeholder="شناسه">
+    </div>
+    }
+    <div>
+        <input [disabled]="state=='remove'" [(ngModel)]="item.name" id="name" name="name" type="text"
+            placeholder="نام کاربر">
+    </div>
+    <div>
+        <input [disabled]="state=='remove'" [(ngModel)]="item.telephone" id="telephone" name="telephone" type="text"
+            placeholder="شماره تماس">
+    </div>
+    <div>
+        <button class="primary" type="submit">تایید</button>
+        <button (click)="cancel()" class="primary" type="button">انصراف</button>
+    </div>
+</form>
+}
