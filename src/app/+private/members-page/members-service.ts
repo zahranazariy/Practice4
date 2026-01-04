@@ -1,31 +1,12 @@
 import { Injectable } from '@angular/core';
 import { MemberItem } from './members-page';
+import { BaseService } from '../../+shared/+base/base-service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class MembersService {
-  private data: MemberItem[] = [
-    { id: 1, name: 'زهرا نظری', telephone: 213065, },
-    { id: 2, name: 'امیر مولایی', telephone: 569854, },
-    { id: 3, name: 'آنا رها', telephone: 635665, },
-  ];
-  list() {
-    return [...this.data];
-  }
-  add(item:MemberItem){
-    this.data.push(item);
-  }
-    edit(item: MemberItem) {
-      const index = this.data.findIndex(m => m.id == item.id);
-      if (index != -1) {
-        this.data[index].name = item.name;
-        this.data[index].telephone = item.telephone;
-      }
-    }
-    remove(item: MemberItem) {
-    this.data=this.data.filter(m=>m.id!==item.id);
-    }
-  }
-  
+export class MembersService extends BaseService<MemberItem> {
+  override data: MemberItem[] = [];
+}
+
 
