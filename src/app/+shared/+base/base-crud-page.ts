@@ -17,24 +17,23 @@ export class BaseCrudPage<T extends Thing> {
         this.dataRefresh();
         this.state = 'list'
     }
-   // ngOnInit(): void {
-       // this.dataRefresh();}
+    // ngOnInit(): void {
+    // this.dataRefresh();}
     data: T[] = [];
-    item!: T ;
+    item!: T;
 
-    setService!:BaseService<T>;
+    setService!: BaseService<T>;
     state: string = 'list';
     dataRefresh() {
         this.data = this.setService.list();
     }
     add() {
         this.state = 'add';
-        //this.item = {
-            //title: '',
-           // writer: '',
-           // publisher: '',
-        //};
+        this.addPrepair();
     }
+    addPrepair() {
+        
+     }
     edit(book: T) {
         this.item = { ...book };
         this.state = 'edit';

@@ -1,0 +1,26 @@
+<my-crud 
+[columns]="memberColumns"
+[mydata]="data"
+[myState]="state" 
+(onCancel)="cancel()"
+(onAdd)="add()"
+(onEdit)="edit($event)"
+(onRemve)="remove($event)"
+(onSave)="save()"
+>
+    <div>
+        <input [disabled]="state=='remove'" [(ngModel)]="item.id" id="id" name="id" type="number" placeholder="شناسه">
+    </div>
+    <div>
+        <input [disabled]="state=='remove'" [(ngModel)]="item.fullname" id="fullname" name="fullname" type="text"
+            placeholder="نام و نام خانوادگی">
+    </div>
+    <div>
+        <input [disabled]="state=='remove'" [(ngModel)]="item.addres" id="addres" name="addres" type="text"
+            placeholder="آدرس">
+    </div>
+    <div>
+        <input [disabled]="state=='remove'" [(ngModel)]="item.mobile" id="mobile" name="mobile" type="text"
+            placeholder="موبایل">
+    </div>
+</my-crud>

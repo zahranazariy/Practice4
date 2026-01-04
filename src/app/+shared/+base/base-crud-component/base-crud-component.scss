@@ -1,0 +1,30 @@
+.primary {
+    background-color: #1e40afbe;
+    color: white;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: none;
+    margin: 0.1em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.307);
+    }
+
+    th,td{
+        padding: 0.3em;
+    }
+
+}
+.alert{
+    border: solid black 0.55px;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    color: rgb(107, 37, 37);
+    text-align: center;
+    margin: 0.5em;
+}
