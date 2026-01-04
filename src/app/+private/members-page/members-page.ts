@@ -16,4 +16,5 @@ export class MembersPage {
 export interface MemberItem  extends Thing{
   fullname: string;
   mobile: string;
+  addres:string
 }
